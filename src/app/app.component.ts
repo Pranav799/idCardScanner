@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { io } from 'socket.io-client';
+import { io, Socket } from 'socket.io-client';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   photoUrl: string = '';
   showPhoto: boolean = false;
 
-  private socket = io('http://localhost:3000'); // Update if server is hosted elsewhere
+  socket: Socket = io('http://localhost:5000');  
 
   ngOnInit() {
     this.socket.on('rfid_data', (data: any) => {
