@@ -22,10 +22,14 @@ export class AppComponent implements OnInit {
         this.name = data.student.Name;
         this.photoUrl = data.student.Photo;
         this.showPhoto = true;
+        console.log("sucess");
+        console.log(this.name);
       } else {
         this.name = 'Unknown';
         this.photoUrl = '../assets/default.png';
         this.showPhoto = true;
+        console.log("error");
+
       }
     });
   }
