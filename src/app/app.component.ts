@@ -7,29 +7,25 @@ import { io } from 'socket.io-client';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  socket: any;
-  studentData: {
-    name: string;
-    rollno: string;
-    image: string;
-  } | null = null;
+  rollNo: string = '--';
+  name: string = '--';
+  photoUrl: string = '';
+  showPhoto: boolean = false;
+
+  private socket = io('http://localhost:3000'); // Update if server is hosted elsewhere
 
   ngOnInit() {
-    this.socket = io('http://localhost:3000'); 
-
     this.socket.on('rfid_data', (data: any) => {
+      this.rollNo = data.data;
+
       if (data.student && !data.student.error) {
-        this.studentData = {
-          name: data.student.Name,
-          rollno: data.data,
-          image: data.student.Photo
-        };
+        this.name = data.student.Name;
+        this.photoUrl = data.student.Photo;
+        this.showPhoto = true;
       } else {
-        this.studentData = {
-          name: 'Unknown',
-          rollno: data.data,
-          image: 'assets/default.png'
-        };
+        this.name = 'Unknown';
+        this.photoUrl = '../assets/default.png';
+        this.showPhoto = true;
       }
     });
   }
