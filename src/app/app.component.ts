@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
         console.log(this.photoUrl);
       } else {
         this.name = 'Unknown';
-        this.photoUrl = '../assets/default.png';
+        this.photoUrl = '../assets/dewang.png';
         this.showPhoto = true;
       }
     });
