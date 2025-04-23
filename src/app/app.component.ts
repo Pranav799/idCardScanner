@@ -25,13 +25,13 @@ export class AppComponent implements OnInit {
         this.showPhoto = true;
         console.log(this.photoUrl);
         this.page = "success";
-        setTimeout(() => {this.page = "tap";}, 3000); 
+        setTimeout(() => {this.page = "tap";}, 2000); 
       } else {
         this.name = 'Unknown';
         this.photoUrl = '../assets/dewang.png';
         this.showPhoto = true;
         this.page = "error";
-        setTimeout(() => {this.page = "tap";}, 3000); 
+        setTimeout(() => {this.page = "tap";}, 2000); 
       }
     });
   }
