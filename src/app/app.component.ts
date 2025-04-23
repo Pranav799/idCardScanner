@@ -7,9 +7,10 @@ import { io, Socket } from 'socket.io-client';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  rollNo: string = '--';
-  name: string = '--';
+  rollNo: string = '';
+  name: string = '';
   photoUrl: string = '';
+  page: string = 'tap';
   showPhoto: boolean = false;
 
   socket: Socket = io('http://localhost:5000');  
@@ -23,10 +24,12 @@ export class AppComponent implements OnInit {
         this.photoUrl = data.student.Photo;
         this.showPhoto = true;
         console.log(this.photoUrl);
+        this.page = "sucess" ;
       } else {
         this.name = 'Unknown';
         this.photoUrl = '../assets/dewang.png';
         this.showPhoto = true;
+        this.page = "error" ;
       }
     });
   }
