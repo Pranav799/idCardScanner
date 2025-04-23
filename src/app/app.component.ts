@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
         setTimeout(() => {this.page = "tap";}, 2000); 
       } else {
         this.name = 'Unknown';
-        this.photoUrl = '../assets/dewang.png';
+        this.photoUrl = '../assets/error.png';
         this.showPhoto = true;
         this.page = "error";
         setTimeout(() => {this.page = "tap";}, 2000); 
