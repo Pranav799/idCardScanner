@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
         this.name = data.student.Name;
         this.photoUrl = data.student.Photo;
         this.showPhoto = true;
+        console.log(this.photoUrl);
       } else {
         this.name = 'Unknown';
         this.photoUrl = '../assets/default.png';
