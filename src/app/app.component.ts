@@ -24,12 +24,14 @@ export class AppComponent implements OnInit {
         this.photoUrl = data.student.Photo;
         this.showPhoto = true;
         console.log(this.photoUrl);
-        this.page = "sucess" ;
+        this.page = "success";
+        setTimeout(() => {this.page = "tap";}, 3000); 
       } else {
         this.name = 'Unknown';
         this.photoUrl = '../assets/dewang.png';
         this.showPhoto = true;
-        this.page = "error" ;
+        this.page = "error";
+        setTimeout(() => {this.page = "tap";}, 3000); 
       }
     });
   }
