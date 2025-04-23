@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   rollNo: string = '';
   name: string = '';
   photoUrl: string = '';
-  page: string = 'tap';
+  page: string = 'success';
   showPhoto: boolean = false;
 
   socket: Socket = io('http://localhost:5000');  
